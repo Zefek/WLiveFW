@@ -130,11 +130,13 @@ namespace WLive
                             {
                                 writer.WritePropertyName(wa.Name);
                                 writer.WriteStartArray();
+                                List<string> arrayData = new List<string>();
                                 foreach (var loop in (dynamic)mi.GetValue(value, null))
                                 {
                                     string data = JsonConvert.SerializeObject(loop, Settings);
-                                    writer.WriteRaw(data);
+                                    arrayData.Add(data);
                                 }
+                                writer.WriteRaw(string.Join(", ", arrayData));
                                 writer.WriteEndArray();
                             }
                             else if (jo[mi.Name].Type == JTokenType.Object)
