@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95B48E72-4786-45CF-9934-0F099473A1F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WLive</RootNamespace>
+    <AssemblyName>WLive</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>WLive.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>WLive.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>WLiveFW.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Nová složka\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AGetConverter.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requester.cs" />
+    <Compile Include="Scopes.cs" />
+    <Compile Include="Utils\ContentType.cs" />
+    <Compile Include="Utils\Settings.cs" />
+    <Compile Include="Utils\WebRequestMethods.cs" />
+    <Compile Include="WLiveObjects\Address.cs" />
+    <Compile Include="WLiveObjects\Album.cs" />
+    <Compile Include="WLiveObjects\Audio.cs" />
+    <Compile Include="WLiveObjects\Calendar.cs" />
+    <Compile Include="WLiveObjects\Comment.cs" />
+    <Compile Include="WLiveObjects\Contact.cs" />
+    <Compile Include="WLiveObjects\Email.cs" />
+    <Compile Include="WLiveObjects\Employer.cs" />
+    <Compile Include="WLiveObjects\Error.cs" />
+    <Compile Include="WLiveObjects\Event.cs" />
+    <Compile Include="WLiveObjects\File.cs" />
+    <Compile Include="WLiveObjects\Folder.cs" />
+    <Compile Include="WLiveObjects\Friend.cs" />
+    <Compile Include="WLiveObjects\From.cs" />
+    <Compile Include="WLiveObjects\Image.cs" />
+    <Compile Include="WLiveObjects\Location.cs" />
+    <Compile Include="WLiveObjects\Operational.cs" />
+    <Compile Include="WLiveObjects\Phone.cs" />
+    <Compile Include="WLiveObjects\Photo.cs" />
+    <Compile Include="WLiveObjects\Position.cs" />
+    <Compile Include="WLiveObjects\SharedWith.cs" />
+    <Compile Include="WLiveObjects\Tag.cs" />
+    <Compile Include="WLiveObjects\User.cs" />
+    <Compile Include="WLiveObjects\Video.cs" />
+    <Compile Include="WLiveObjects\Work.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WLive.ruleset" />
+    <None Include="WLiveFW.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
